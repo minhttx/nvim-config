@@ -1,3 +1,14 @@
+# Ignore swap and undo files
+*.swp
+*.swo
+undo/
+
+# Ignore plugin manager data (e.g., lazy.nvim or packer)
+# Usually, you only want to sync your config, not the 1GB of downloaded plugins
+/init.lua.backup
+/plugin/
+/lua/user/packer_compiled.lua
+
 tags
 test.sh
 .luarc.json
