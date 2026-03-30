@@ -4,13 +4,6 @@
 -- See the kickstart.nvim README for more information
 return {
 
-  -- {
-  --   'RRethy/base16-nvim',
-  --   config = function()
-  --     require('matugen').setup()
-  --vim.cmd.colorscheme 'base16-flexoki-light'
-  --   end,
-  -- },
   {
     'HakonHarnes/img-clip.nvim',
     event = 'VeryLazy',
@@ -70,30 +63,30 @@ return {
       vim.g.gruvbox_material_enable_italic = true
       vim.g.gruvbox_material_background = 'hard'
       vim.g.gruvbox_material_better_performance = '1'
-      vim.cmd.colorscheme 'gruvbox-material'
+      --      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
-  --{
-  --  'kepano/flexoki-neovim',
-  --  name = 'flexoki',
-  --  config = function()
-  --    vim.cmd.colorscheme 'flexoki-light'
-  --  end,
-  --},
-  --{
-  --  'zk-org/zk-nvim',
-  --  config = function()
-  --    require('zk').setup {
-  -- See Setup section below
-  --      notebook_dir = '/mnt/data/notes',
-  --      picker = 'select',
-  --      auto_attach = {
-  --        enabled = true,
-  --      },
-  --    }
-  --  end,
-  --},
+  {
+    'kepano/flexoki-neovim',
+    name = 'flexoki',
+    config = function()
+      --vim.cmd.colorscheme 'flexoki-light'
+    end,
+  },
+  {
+    'thesimonho/kanagawa-paper.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {
+      -- transparent background
+      transparent = true,
+    },
 
+    config = function(_, opts)
+      require('kanagawa-paper').setup(opts) -- Manually pass the opts
+      vim.cmd.colorscheme 'kanagawa-paper-canvas'
+    end,
+  },
   {
     'MeanderingProgrammer/render-markdown.nvim',
     --dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' }, -- if you use the mini.nvim suite
